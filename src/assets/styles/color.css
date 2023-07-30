@@ -1,0 +1,50 @@
+/* color palette */
+:root {
+  /* Red */
+  --darkest-red-clr: #800000;
+  --darker-red-clr: #bf0000;
+  --red-clr: #ff0d00;
+  --light-red-clr: #fc6d6d;
+
+  /* Blue */
+  --denim-clr: #6f8faf;
+  --blue-clr: #0000ff;
+  --gray-clr: #7393b3;
+  --tiffany-clr: #0abab5;
+  --aqua-clr: #00ffff;
+  --light-clr: #0096ff;
+  --lighter-clr: #132227;
+  --azure-clr: #f0ffff;
+
+  /* Green */
+  --teal-clr: #008080;
+  --jade-clr: #00a36c;
+  --mint-clr: #3eb489;
+  --seafoam-clr: #9fe2bf;
+  --verdigris-clr: #40b5ad;
+  --spearmint-clr: #45b08c;
+  --green-fade-clr: hsla(160, 44%, 48%, 0.3);
+
+  /* White */
+  --white-clr: #f9f9f9;
+
+  /* Black */
+  --darkest-black-clr: #000000;
+  --dark-black-clr: #141414;
+  --medium-black-clr: #1b1b1b;
+
+  /* Grey */
+  --darkest-grey-clr: #474747;
+  --dark-grey-clr: #555555;
+  --grey-clr: #797979;
+  --light-grey-clr: #b4b4b4;
+}
+
+/* semantic color variables for this project */
+:root {
+  --primary-clr: var(--teal-clr);
+  --primary-opacity-clr: var(--spearmint-clr);
+
+  --text-clr: var(--white-clr);
+  --background-clr: var(--medium-black-clr);
+}

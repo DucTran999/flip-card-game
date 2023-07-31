@@ -2,20 +2,34 @@
   <div class="row menu">
     <div class="menu__header">Choose the level</div>
     <div class="col col-cent" v-for="option in options">
-      <OptionButton v-bind:option="option" />
+      <OptionButton :option="option" :setup="setupMatch" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import '@/assets/styles/animation.css'
+import useGameModeStore from '@/stores/gameStore'
+import arrayHelper from '@/utils/arrayHelper'
+
+// Components Injected
 import OptionButton from '@/components/buttons/OptionButton.vue'
 
 const options = [
-  { title: 'easy', description: 'Size 2 x 2', size: 2 },
-  { title: 'moderate', description: 'Size 3 x 3', size: 3 },
-  { title: 'hard', description: 'Size 4 x 4', size: 4 }
+  { title: 'easy', description: 'Size 2 x 4', size: 4 },
+  { title: 'moderate', description: 'Size 3 x 4', size: 6 },
+  { title: 'hard', description: 'Size 4 x 4', size: 8 }
 ]
+
+const gameStore = useGameModeStore()
+
+const setupMatch = (size: number) => {
+  const array: number[] = [...Array(8).keys()]
+  const elements: number[] = arrayHelper.sample(array, size)
+  let matrix = [...elements, ...elements]
+  matrix = arrayHelper.shuffle(matrix)
+  gameStore.updateMatrix(matrix)
+}
 </script>
 
 <style lang="scss" scoped>

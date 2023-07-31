@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import '@/assets/styles/animation.css'
+
 import router from '@/router'
 import useGameModeStore from '@/stores/gameStore'
 import stringFormatter from '@/utils/stringFormatter'
@@ -18,7 +19,7 @@ interface Option {
   description: string
   size: number
 }
-const props = defineProps<{ option: Option }>()
+const props = defineProps<{ option: Option; setup: Function }>()
 
 let { title, description, size } = props.option
 title = stringFormatter.formatToCapitalize(title)
@@ -26,6 +27,7 @@ description = stringFormatter.formatToCapitalize(description)
 
 const onModeSelected = () => {
   gameStore.update(size)
+  props.setup(size)
   router.push('/game')
 }
 </script>

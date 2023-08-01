@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import PrimaryHeader from '@/components/headers/PrimaryHeader.vue'
-import LoginForm from '@/components/forms/LoginForm.vue'
-</script>
-
 <template>
   <div class="container">
     <div class="row">
@@ -13,6 +8,11 @@ import LoginForm from '@/components/forms/LoginForm.vue'
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import PrimaryHeader from '@/components/headers/PrimaryHeader.vue'
+import LoginForm from '@/components/forms/LoginForm.vue'
+</script>
 
 <style scoped>
 .row-cent {

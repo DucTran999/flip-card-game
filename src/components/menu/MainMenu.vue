@@ -16,19 +16,20 @@ import arrayHelper from '@/utils/arrayHelper'
 import OptionButton from '@/components/buttons/OptionButton.vue'
 
 const options = [
-  { title: 'easy', description: 'Size 2 x 4', size: 4 },
-  { title: 'moderate', description: 'Size 3 x 4', size: 6 },
-  { title: 'hard', description: 'Size 4 x 4', size: 8 }
+  { title: 'easy', description: 'Size 2 x 4', size: 4, turn: 12 },
+  { title: 'moderate', description: 'Size 3 x 4', size: 6, turn: 25 },
+  { title: 'hard', description: 'Size 4 x 4', size: 8, turn: 30 }
 ]
 
 const gameStore = useGameModeStore()
 
-const setupMatch = (size: number) => {
+const setupMatch = (size: number, turn: number, timeLimit: number) => {
   const array: number[] = [...Array(8).keys()]
   const elements: number[] = arrayHelper.sample(array, size)
   let matrix = [...elements, ...elements]
   matrix = arrayHelper.shuffle(matrix)
-  gameStore.updateMatrix(matrix)
+
+  gameStore.createMatch(size, matrix, turn, timeLimit)
 }
 </script>
 

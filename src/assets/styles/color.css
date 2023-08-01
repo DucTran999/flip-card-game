@@ -31,6 +31,7 @@
   /* Black */
   --darkest-black-clr: #000000;
   --dark-black-clr: #141414;
+  --black-half-opacity-clr: hsla(0, 0%, 23%, 0.3);
   --medium-black-clr: #1b1b1b;
 
   /* Grey */

@@ -1,19 +1,34 @@
 import { defineStore } from 'pinia'
 
-let matrixSize: number = 0
-let matrix: Array<number> = []
+interface Match {
+  matrixSize: number
+  matrix: number[]
+  turn: number
+  result: boolean
+}
 
 const useGameModeStore = defineStore('gameMode', {
   state: () => {
-    return { matrixSize, matrix }
+    const match: Match = {
+      matrixSize: 0,
+      matrix: [],
+      turn: 0,
+      result: false
+    }
+    return { match }
   },
-
   actions: {
-    update(newSize: number) {
-      this.matrixSize = newSize
+    createMatch(newSize: number, matrixShuffled: number[], totalTurns: number, timeLimit: number) {
+      this.match.matrix = matrixShuffled
+      this.match.matrixSize = newSize
+      this.match.turn = totalTurns
+      this.match.result = false
     },
-    updateMatrix(matrix: Array<number>) {
-      this.matrix = matrix
+    decreaseTurn() {
+      this.match.turn--
+    },
+    updateResult(res: boolean) {
+      this.match.result = res
     }
   }
 })

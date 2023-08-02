@@ -1,14 +1,23 @@
 <template>
-  <div class="wrapper">Flip Card</div>
+  <div class="logo">Flip Card</div>
 </template>
 
-<script setup lang="ts"></script>
+<style scoped lang="scss">
+@use '@/assets/styles' as s;
 
-<style lang="scss" scoped>
-.wrapper {
-  font-size: 3em;
+.logo {
+  font-size: 4em;
   font-weight: normal;
   text-align: center;
   color: var(--primary-opacity-clr);
+
+  user-select: none;
+  @include s.breakpoint(md) {
+    font-size: 6em;
+  }
+
+  @include s.breakpoint(lg) {
+    font-size: 10em;
+  }
 }
 </style>

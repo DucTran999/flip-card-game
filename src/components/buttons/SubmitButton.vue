@@ -16,14 +16,15 @@ defineProps({
   border: none;
   outline: none;
 
-  padding: 0.5em 2em;
+  padding: 0.2em 1em;
   margin: 1em;
 
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--primary-opacity-clr);
   background: var(--dark-black-clr);
-  border: 0.2em solid var(--primary-opacity-clr);
+  border-radius: 20px;
+  border: 0.1em solid var(--primary-opacity-clr);
 
   font-family: 'Oleo Script', cursive;
   &.active {

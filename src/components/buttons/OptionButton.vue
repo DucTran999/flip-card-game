@@ -30,6 +30,8 @@ const onModeSelected = () => {
 </script>
 
 <style lang="scss" scoped>
+@use '@/assets/styles' as s;
+
 .btn-wrap {
   display: flex;
   justify-content: center;
@@ -37,7 +39,7 @@ const onModeSelected = () => {
   align-items: center;
 
   background-color: var(--dark-black-clr);
-  width: 60%;
+  width: 100%;
   margin-bottom: 2em;
 
   cursor: pointer;
@@ -55,6 +57,10 @@ const onModeSelected = () => {
     border-right: 0.2em solid transparent;
     border-top: 0.2em solid var(--primary-opacity-clr);
     border-bottom: 0.2em solid var(--primary-opacity-clr);
+  }
+
+  @include s.breakpoint(lg) {
+    width: 60%;
   }
 }
 

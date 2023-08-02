@@ -6,6 +6,9 @@
   --red-clr: #ff0d00;
   --light-red-clr: #fc6d6d;
 
+  /* Yellow */
+  --gold-clr: hsl(41, 100%, 50%);
+
   /* Blue */
   --denim-clr: #6f8faf;
   --blue-clr: #0000ff;

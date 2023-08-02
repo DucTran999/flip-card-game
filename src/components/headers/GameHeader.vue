@@ -24,6 +24,7 @@ const { username } = userStore.$state
 }
 
 .header-util {
+  margin-bottom: 1em;
   font-weight: 500;
   font-size: 2.5rem;
   color: var(--primary-opacity-clr);

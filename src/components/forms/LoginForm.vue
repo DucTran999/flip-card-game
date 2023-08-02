@@ -32,15 +32,25 @@ const handleSubmit = () => {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/styles' as s;
+
 .form-signin {
   position: relative;
-  width: 40%;
+  width: 90%;
 
   margin: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include s.breakpoint(md) {
+    width: 60%;
+  }
+
+  @include s.breakpoint(lg) {
+    width: 40%;
+  }
 }
 
 .input-box {

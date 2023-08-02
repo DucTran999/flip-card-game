@@ -1,7 +1,7 @@
 <template>
   <div class="row menu">
     <div class="menu__header">Choose the level</div>
-    <div class="col col-cent" v-for="option in options">
+    <div class="col-xs-12 col-md-4 col-cent" v-for="option in options">
       <OptionButton :option="option" :setup="setupMatch" />
     </div>
   </div>
@@ -34,6 +34,7 @@ const setupMatch = (size: number, turn: number, timeLimit: number) => {
 </script>
 
 <style lang="scss" scoped>
+@use '@/assets/styles' as s;
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Oleo+Script:wght@700&display=swap');
 .col-cent {
   display: flex;
@@ -43,7 +44,7 @@ const setupMatch = (size: number, turn: number, timeLimit: number) => {
 
 .menu {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 1em;
   border: 0.2em solid var(--green-fade-clr);
@@ -60,6 +61,10 @@ const setupMatch = (size: number, turn: number, timeLimit: number) => {
     animation: flyUp 0.8s ease-in-out;
 
     font-family: 'Oleo Script', cursive;
+  }
+
+  @include s.breakpoint(lg) {
+    width: 80%;
   }
 }
 </style>
